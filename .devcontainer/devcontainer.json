@@ -1,0 +1,27 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Spotify DL Docker",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+"remoteUser": "node",
+"runArgs": ["--name", "Spotify-Dl"],
+"features": {
+	"ghcr.io/devcontainers-extra/features/ffmpeg-apt-get:1": {}
+},
+"postCreateCommand": "npm install && cd Djing/Tunes",
+"mounts": [
+    "source=/Users/tomgill/Library/CloudStorage/OneDrive-Personal/Personal Files/Music Production/DJing,target=/workspaces/spotify-dl/DJing,type=bind"
+  ]
+}
+
+
+
+// // See https://containers.dev/implementors/json_reference/ for configuration reference
+// {
+// 	"name": "Spotify DL Docker",
+// 	"build": {
+// 		"dockerfile": "../Dockerfile"
+// 	},
+// "postCreateCommand": "npm install"
+// }
